@@ -224,3 +224,7 @@ data/raw/*
 # Dados processados gerados localmente
 data/processed/*
 !data/processed/.gitkeep
+
+# Arquivos de dados grandes (proteção global em qualquer diretório)
+*.zip
+*.csv
