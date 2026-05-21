@@ -222,4 +222,4 @@ jupyter notebook notebooks/
 
 **Rodrigo Torres**  
 Estudante de Ciência da Computação — foco em Data Science  
-[GitHub](https://github.com/Rodrigotorres1)
+[GitHub](https://github.com/Rodrigotorres1) · [LinkedIn](https://www.linkedin.com/in/rodrigo-torres-data/)
