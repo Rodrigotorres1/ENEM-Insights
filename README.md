@@ -5,7 +5,7 @@ Análise exploratória completa dos microdados do ENEM 2023 investigando desigua
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![Pandas](https://img.shields.io/badge/Pandas-2.2-150458?logo=pandas)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
-![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow)
+![Status](https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen)
 
 ---
 
@@ -62,7 +62,7 @@ enem-insights/
 │   ├── 02_analise_univariada.ipynb
 │   ├── 03_analise_bivariada.ipynb
 │   ├── 03b_analise_geografica.ipynb
-│   └── 04_insights_finais.ipynb      (em breve)
+│   └── 04_insights_finais.ipynb
 ├── src/
 │   └── utils.py                      # Mapeamentos, estilo e funções compartilhadas
 ├── reports/
@@ -122,6 +122,14 @@ Desempenho dos 27 estados e 5 regiões, com ranking colorido por região, boxplo
 | 3 | Matemática é a área com maior desigualdade regional | Amplitude de 87 pts entre MG (565,7) e AP (478,9) |
 | 4 | DF se destaca dentro do Centro-Oeste | 558,3 pts — 16,7 pts acima da média nacional (541,6) |
 
+### 04 — Insights Finais
+Consolidação narrativa de todos os achados, com dois novos visuais:
+
+- **Amplitude das Desigualdades:** gráfico síntese que coloca renda, escola, raça, região e gênero em uma única escala, comparando a magnitude de cada fator diretamente.
+- **Desvantagem Composta:** compara perfis extremos (escola pública + renda baixa + indígena vs. escola privada + renda alta + branca), revelando um gap superior a 200 pts.
+
+**Conclusão central:** as desigualdades se acumulam. O tipo de escola tem efeito independente da renda, e candidatos que concentram múltiplos fatores desfavoráveis partem de uma posição mais de dois desvios padrão abaixo dos grupos mais privilegiados.
+
 ---
 
 ## Principais Visualizações
@@ -161,10 +169,18 @@ Desempenho dos 27 estados e 5 regiões, com ranking colorido por região, boxplo
   </tr>
   <tr>
     <td><img src="reports/figures/03b_nota_por_regiao.png" width="400"/></td>
-    <td></td>
+    <td><img src="reports/figures/04_mapa_desigualdades.png" width="400"/></td>
   </tr>
   <tr>
     <td align="center">Distribuição da nota por região</td>
+    <td align="center">Amplitude das desigualdades (síntese)</td>
+  </tr>
+  <tr>
+    <td><img src="reports/figures/04_desvantagem_composta.png" width="400"/></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center">Desvantagem composta por perfil</td>
     <td></td>
   </tr>
 </table>
