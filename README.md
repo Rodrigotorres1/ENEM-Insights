@@ -78,7 +78,7 @@ enem-insights/
 ### 01 — Carregamento e Limpeza
 Leitura do arquivo ZIP diretamente via `zipfile`, seleção das colunas de interesse, remoção de candidatos ausentes nas provas (31% do total), aplicação de mapeamentos categóricos e exportação para Parquet.
 
-**Resultado:** dataset limpo com ~345 mil registros e 11 colunas.
+**Resultado:** dataset limpo com ~370 mil registros e 11 colunas.
 
 ### 02 — Análise Univariada
 Exploração individual de cada variável: distribuição das notas por área (histogramas + KDE + boxplots), perfil demográfico dos candidatos (escola, sexo, cor/raça, renda) e ranking de estados por nota média.
@@ -192,7 +192,7 @@ jupyter notebook notebooks/
 - **Python 3.11** — linguagem principal
 - **Pandas / NumPy** — manipulação e análise de dados
 - **Matplotlib / Seaborn** — visualizações estáticas
-- **Plotly** — mapa choropleth interativo
+- **Plotly** — mapa choropleth interativo (03b)
 - **PyArrow** — leitura/escrita eficiente em Parquet
 
 ---
