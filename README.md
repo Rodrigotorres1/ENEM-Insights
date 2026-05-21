@@ -200,6 +200,7 @@ cd enem-insights
 pip install -r requirements.txt
 
 # 3. Baixe os microdados do ENEM 2023 no portal do INEP
+https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem
 #    e coloque o arquivo ZIP em data/raw/
 
 # 4. Execute os notebooks em ordem
