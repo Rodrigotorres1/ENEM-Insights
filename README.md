@@ -60,7 +60,7 @@ enem-insights/
 │   ├── 01_carregamento_limpeza.ipynb
 │   ├── 02_analise_univariada.ipynb
 │   ├── 03_analise_bivariada.ipynb
-│   ├── 03b_analise_geografica.ipynb  (em breve)
+│   ├── 03b_analise_geografica.ipynb
 │   └── 04_insights_finais.ipynb      (em breve)
 ├── src/
 │   └── utils.py                      # Mapeamentos, estilo e funções compartilhadas
@@ -90,7 +90,7 @@ Alguns destaques:
 | Matemática | Maior variância entre as áreas; distribuição mais dispersa |
 | Redação | Distribuição mais concentrada; mediana ~640 pts |
 | Escola | Maioria dos candidatos vem de escola pública |
-| Renda | Concentração nas faixas mais baixas (A–C) |
+| Renda | Maioria dos candidatos tem renda familiar de até R$ 2.000/mês |
 
 ### 03 — Análise Bivariada
 Cruzamentos entre desempenho e variáveis socioeconômicas e demográficas.
@@ -104,6 +104,18 @@ Cruzamentos entre desempenho e variáveis socioeconômicas e demográficas.
 | 3 | Candidatos indígenas, pretos e pardos pontuam abaixo da média | Indígenas: −82 pts vs brancos; pretos: −52 pts; pardos: −46 pts |
 | 4 | Diferença por sexo é área-específica | Homens +38 pts em MT; mulheres +39 pts em Redação |
 | 5 | **A vantagem da escola privada independe da renda** | Privada supera pública em todas as 16 faixas — gap mínimo de 45 pts |
+
+### 03b — Análise Geográfica
+Desempenho dos 27 estados e 5 regiões, com ranking colorido por região, boxplot regional, heatmap estado × área de conhecimento e mapa choropleth interativo gerado a partir do GeoJSON oficial do IBGE.
+
+**Principais achados:**
+
+| # | Insight | Evidência |
+|---|---|---|
+| 1 | Variação expressiva entre estados | 67 pts entre MG (572,7) e AM (505,6) |
+| 2 | Sul e Sudeste lideram com folga | Mediana Sul/Sudeste ~557–561 pts vs Norte ~509 pts (+52 pts) |
+| 3 | Matemática é a área com maior desigualdade regional | Amplitude de 87 pts entre MG (565,7) e AP (478,9) |
+| 4 | DF se destaca dentro do Centro-Oeste | 558,3 pts — 16,7 pts acima da média nacional (541,6) |
 
 ---
 
@@ -133,6 +145,22 @@ Cruzamentos entre desempenho e variáveis socioeconômicas e demográficas.
   <tr>
     <td align="center">Desempenho por cor/raça</td>
     <td align="center">Desempenho por sexo e área</td>
+  </tr>
+  <tr>
+    <td><img src="reports/figures/03b_ranking_estados.png" width="400"/></td>
+    <td><img src="reports/figures/03b_heatmap_uf_area.png" width="400"/></td>
+  </tr>
+  <tr>
+    <td align="center">Ranking dos 27 estados por nota média</td>
+    <td align="center">Heatmap estado × área de conhecimento</td>
+  </tr>
+  <tr>
+    <td><img src="reports/figures/03b_nota_por_regiao.png" width="400"/></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td align="center">Distribuição da nota por região</td>
+    <td></td>
   </tr>
 </table>
 
@@ -164,7 +192,7 @@ jupyter notebook notebooks/
 - **Python 3.11** — linguagem principal
 - **Pandas / NumPy** — manipulação e análise de dados
 - **Matplotlib / Seaborn** — visualizações estáticas
-- **Plotly / Folium** — visualizações interativas (próximos notebooks)
+- **Plotly** — mapa choropleth interativo
 - **PyArrow** — leitura/escrita eficiente em Parquet
 
 ---
