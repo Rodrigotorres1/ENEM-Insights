@@ -122,6 +122,8 @@ Desempenho dos 27 estados e 5 regiões, com ranking colorido por região, boxplo
 | 3 | Matemática é a área com maior desigualdade regional | Amplitude de 87 pts entre MG (565,7) e AP (478,9) |
 | 4 | DF se destaca dentro do Centro-Oeste | 558,3 pts — 16,7 pts acima da média nacional (541,6) |
 
+Inclui também um **recorte regional sobre Pernambuco**: PE ocupa o 1º lugar no Nordeste (539,8 pts) e o 10º no ranking nacional, superando a média nordestina em todas as áreas — com destaque para Matemática (+17,2 pts).
+
 ### 04 — Insights Finais
 Consolidação narrativa de todos os achados, com dois novos visuais:
 
@@ -169,19 +171,19 @@ Consolidação narrativa de todos os achados, com dois novos visuais:
   </tr>
   <tr>
     <td><img src="reports/figures/03b_nota_por_regiao.png" width="400"/></td>
-    <td><img src="reports/figures/04_mapa_desigualdades.png" width="400"/></td>
+    <td><img src="reports/figures/03b_recorte_nordeste_pe.png" width="400"/></td>
   </tr>
   <tr>
     <td align="center">Distribuição da nota por região</td>
-    <td align="center">Amplitude das desigualdades (síntese)</td>
+    <td align="center">Recorte regional: Nordeste e Pernambuco</td>
   </tr>
   <tr>
+    <td><img src="reports/figures/04_mapa_desigualdades.png" width="400"/></td>
     <td><img src="reports/figures/04_desvantagem_composta.png" width="400"/></td>
-    <td></td>
   </tr>
   <tr>
+    <td align="center">Amplitude das desigualdades (síntese)</td>
     <td align="center">Desvantagem composta por perfil</td>
-    <td></td>
   </tr>
 </table>
 
