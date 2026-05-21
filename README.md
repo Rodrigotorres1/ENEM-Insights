@@ -27,8 +27,9 @@ Este projeto aplica técnicas de Análise Exploratória de Dados (EDA) para resp
 | Item | Detalhe |
 |---|---|
 | Fonte | [INEP — Microdados do ENEM 2023](https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem) |
-| Registros totais | ~4,3 milhões de candidatos |
+| Registros totais | 3.933.955 candidatos |
 | Amostra utilizada | 500.000 registros |
+| Amostra limpa analisada | 370.141 candidatos |
 | Formato original | CSV (separador `;`, encoding `latin-1`) |
 | Formato processado | Parquet |
 
@@ -78,7 +79,7 @@ enem-insights/
 ### 01 — Carregamento e Limpeza
 Leitura do arquivo ZIP diretamente via `zipfile`, seleção das colunas de interesse, remoção de candidatos ausentes nas provas (31% do total), aplicação de mapeamentos categóricos e exportação para Parquet.
 
-**Resultado:** dataset limpo com ~370 mil registros e 11 colunas.
+**Resultado:** dataset limpo com **370.141 registros** e **11 colunas**.
 
 ### 02 — Análise Univariada
 Exploração individual de cada variável: distribuição das notas por área (histogramas + KDE + boxplots), perfil demográfico dos candidatos (escola, sexo, cor/raça, renda) e ranking de estados por nota média.
@@ -87,10 +88,14 @@ Alguns destaques:
 
 | Variável | Observação |
 |---|---|
-| Matemática | Maior variância entre as áreas; distribuição mais dispersa |
-| Redação | Distribuição mais concentrada; mediana ~640 pts |
-| Escola | Maioria dos candidatos vem de escola pública |
-| Renda | Maioria dos candidatos tem renda familiar de até R$ 2.000/mês |
+| Nota média geral | Média de **541,6 pts** e mediana de **538,8 pts** |
+| Matemática | Maior dispersão entre as provas objetivas: **524,2 pts** de média, **510,1 pts** de mediana e **127,0 pts** de desvio padrão |
+| Redação | Maior média entre as áreas: **647,5 pts**, com mediana de **640,0 pts** |
+| Escola | **54,3%** aparecem como `Não respondeu`; entre quem informou escola, **87,3%** são de escola pública e **12,7%** de escola privada |
+| Sexo | Predomínio feminino: **256.157 candidatas (69,2%)** contra **113.984 candidatos (30,8%)** |
+| Cor/raça | Maiores grupos: **Parda (44,4%)**, **Branca (39,3%)** e **Preta (13,2%)** |
+| Renda | Faixas até **R$ 1.980** concentram **226.843 candidatos (61,3%)**; a maior faixa isolada é `Até R$ 1.320`, com **36,9%** |
+| Estado | Variação de **67,1 pts** entre o maior e o menor desempenho médio: **MG (572,7 pts)** no topo e **AM (505,6 pts)** na base |
 
 ### 03 — Análise Bivariada
 Cruzamentos entre desempenho e variáveis socioeconômicas e demográficas.
