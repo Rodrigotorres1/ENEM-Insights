@@ -204,7 +204,7 @@ https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem
 #    e coloque o arquivo ZIP em data/raw/
 
 # 4. Execute os notebooks em ordem
-jupyter notebook notebooks/
+python -m jupyter notebook notebooks/
 ```
 
 > **Requisito:** Python 3.11+
