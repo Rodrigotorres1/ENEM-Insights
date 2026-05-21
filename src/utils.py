@@ -58,8 +58,16 @@ NOTAS_LABELS = {
 }
 
 
-def configurar_estilo():
-    """Aplica o estilo padrão do projeto a todos os gráficos."""
+def configurar_estilo() -> None:
+    """Aplica o estilo visual padrão do projeto a todos os gráficos.
+
+    Define o tema do seaborn como whitegrid com paleta muted e escala
+    de fonte 1.1, e remove as bordas superior e direita dos eixos via
+    rcParams do matplotlib.
+
+    Returns:
+        None
+    """
     sns.set_theme(style="whitegrid", palette="muted", font_scale=1.1)
     plt.rcParams.update({
         "figure.dpi": 120,
@@ -69,19 +77,54 @@ def configurar_estilo():
 
 
 def salvar_figura(fig: plt.Figure, nome: str, pasta: str = "../reports/figures") -> None:
-    """Salva a figura em PNG na pasta de relatórios."""
+    """Salva uma figura matplotlib em PNG na pasta de relatórios.
+
+    Args:
+        fig (plt.Figure): Objeto Figure do matplotlib a ser salvo.
+        nome (str): Nome do arquivo sem extensão (ex: '02_histogramas_notas').
+        pasta (str): Caminho do diretório de destino. Padrão:
+            '../reports/figures'.
+
+    Returns:
+        None
+    """
     caminho = f"{pasta}/{nome}.png"
     fig.savefig(caminho, bbox_inches="tight")
     print(f"Figura salva: {caminho}")
 
 
 def nota_media(df: pd.DataFrame) -> pd.Series:
-    """Retorna a média das 5 notas por linha (ignora NaN)."""
+    """Calcula a média das 5 notas do ENEM por candidato.
+
+    Utiliza as colunas definidas em NOTAS_COLS e ignora valores ausentes
+    (NaN) no cálculo, de modo que candidatos com notas parciais não sejam
+    penalizados.
+
+    Args:
+        df (pd.DataFrame): DataFrame contendo as colunas de notas definidas
+            em NOTAS_COLS ('NU_NOTA_CN', 'NU_NOTA_CH', 'NU_NOTA_LC',
+            'NU_NOTA_MT', 'NU_NOTA_REDACAO').
+
+    Returns:
+        pd.Series: Série com a nota média de cada linha do DataFrame.
+    """
     return df[NOTAS_COLS].mean(axis=1)
 
 
 def formatar_eixo_mil(ax, eixo: str = "y") -> None:
-    """Formata eixo numérico com separador de milhar em PT-BR."""
+    """Formata um eixo numérico usando separador de milhar no padrão PT-BR.
+
+    Substitui a vírgula padrão do Python pelo ponto usado no Brasil
+    (ex: 100000 → '100.000').
+
+    Args:
+        ax: Objeto Axes do matplotlib cujo eixo será formatado.
+        eixo (str): Eixo a formatar: 'y' para o eixo vertical ou 'x'
+            para o horizontal. Padrão: 'y'.
+
+    Returns:
+        None
+    """
     fmt = mticker.FuncFormatter(lambda x, _: f"{x:,.0f}".replace(",", "."))
     if eixo == "y":
         ax.yaxis.set_major_formatter(fmt)
