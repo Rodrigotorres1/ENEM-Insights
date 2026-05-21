@@ -59,7 +59,7 @@ enem-insights/
 ├── notebooks/
 │   ├── 01_carregamento_limpeza.ipynb
 │   ├── 02_analise_univariada.ipynb
-│   ├── 03_analise_bivariada.ipynb    (em breve)
+│   ├── 03_analise_bivariada.ipynb
 │   ├── 03b_analise_geografica.ipynb  (em breve)
 │   └── 04_insights_finais.ipynb      (em breve)
 ├── src/
@@ -88,9 +88,22 @@ Alguns destaques:
 | Variável | Observação |
 |---|---|
 | Matemática | Maior variância entre as áreas; distribuição mais dispersa |
-| Redação | Distribuição mais concentrada; mediana próxima de 640 pts |
+| Redação | Distribuição mais concentrada; mediana ~640 pts |
 | Escola | Maioria dos candidatos vem de escola pública |
 | Renda | Concentração nas faixas mais baixas (A–C) |
+
+### 03 — Análise Bivariada
+Cruzamentos entre desempenho e variáveis socioeconômicas e demográficas.
+
+**Principais achados:**
+
+| # | Insight | Evidência |
+|---|---|---|
+| 1 | Escola privada supera pública em todas as áreas | +163 pts em Redação, +130 pts em Matemática, +101 pts na média |
+| 2 | Renda e desempenho têm relação monotônica | +172 pts entre a menor (sem renda) e a maior faixa de renda |
+| 3 | Candidatos indígenas, pretos e pardos pontuam abaixo da média | Indígenas: −82 pts vs brancos; pretos: −52 pts; pardos: −46 pts |
+| 4 | Diferença por sexo é área-específica | Homens +38 pts em MT; mulheres +39 pts em Redação |
+| 5 | **A vantagem da escola privada independe da renda** | Privada supera pública em todas as 16 faixas — gap mínimo de 45 pts |
 
 ---
 
@@ -106,12 +119,20 @@ Alguns destaques:
     <td align="center">KDE comparativo</td>
   </tr>
   <tr>
-    <td><img src="reports/figures/02_distribuicao_renda.png" width="400"/></td>
-    <td><img src="reports/figures/02_ranking_uf.png" width="400"/></td>
+    <td><img src="reports/figures/03_heatmap_renda_area.png" width="400"/></td>
+    <td><img src="reports/figures/03_nota_renda_por_escola.png" width="400"/></td>
   </tr>
   <tr>
-    <td align="center">Distribuição de renda</td>
-    <td align="center">Ranking por estado</td>
+    <td align="center">Nota média por área × renda</td>
+    <td align="center">Vantagem da escola privada por faixa de renda</td>
+  </tr>
+  <tr>
+    <td><img src="reports/figures/03_nota_por_raca.png" width="400"/></td>
+    <td><img src="reports/figures/03_notas_por_sexo.png" width="400"/></td>
+  </tr>
+  <tr>
+    <td align="center">Desempenho por cor/raça</td>
+    <td align="center">Desempenho por sexo e área</td>
   </tr>
 </table>
 
